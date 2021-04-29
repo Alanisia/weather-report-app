@@ -1,0 +1,16 @@
+.tempdiv {
+  text-align: center;
+}
+
+.highest {
+  color: #ffffff;
+}
+
+.lowest {
+  color: #888888;
+}
+
+.temperature {
+  font-size: 64px;
+  margin-bottom: 5px;
+}

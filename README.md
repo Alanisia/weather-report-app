@@ -1,3 +1,5 @@
-# React-Webpack-Start
+# Weather Report App
 
-Built without create-react-app scaffold.
+Course design of Mobile Web.
+
+An app of reporting weather,

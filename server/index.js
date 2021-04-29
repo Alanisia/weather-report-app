@@ -36,6 +36,30 @@ app.get('/api/15days', (req, res, next) => {
   }).catch(e => console.error(e));
 });
 
+app.get('/api/muxiaoguo/today', (req, res, next) => {
+  const city = req.query.city;
+  axios.get(cityApi.getMuxiaoguoURL(city, 1)).then(r => {
+    res.send(r.data.data);
+    next();
+  }).catch(e => console.error(e));
+});
+
+app.get('/api/muxiaoguo/7days', (req, res, next) => {
+  const city = req.query.city;
+  axios.get(cityApi.getMuxiaoguoURL(city, 2)).then(r => {
+    res.send(r.data.data);
+    next();
+  }).catch(e => console.error(e));
+});
+
+app.get('/api/muxiaoguo/15days', (req, res, next) => {
+  const city = req.query.city;
+  axios.get(cityApi.getMuxiaoguoURL(city, 3)).then(r => {
+    res.send(r.data.data);
+    next();
+  }).catch(e => console.error(e));
+});
+
 app.listen(port, () => {
   console.log(`Server started at ${port}`);
 });
