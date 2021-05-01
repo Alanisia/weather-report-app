@@ -1,0 +1,25 @@
+.day-list {
+  color: aliceblue;
+  list-style: none;
+  /* margin-left: inherit; */
+}
+
+.week {
+  float: left;
+}
+
+.wimg {
+  text-align: center;
+}
+
+.temp {
+  float: right;
+}
+
+.hg {
+  color: aliceblue;
+}
+
+.lw {
+  color: gray;
+}

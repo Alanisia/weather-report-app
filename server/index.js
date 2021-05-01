@@ -37,7 +37,7 @@ app.get('/api/15days', (req, res, next) => {
 });
 
 app.get('/api/muxiaoguo/today', (req, res, next) => {
-  const city = req.query.city;
+  const city = decodeURI(req.query.city);
   axios.get(cityApi.getMuxiaoguoURL(city, 1)).then(r => {
     res.send(r.data.data);
     next();
@@ -56,6 +56,14 @@ app.get('/api/muxiaoguo/15days', (req, res, next) => {
   const city = req.query.city;
   axios.get(cityApi.getMuxiaoguoURL(city, 3)).then(r => {
     res.send(r.data.data);
+    next();
+  }).catch(e => console.error(e));
+});
+
+app.get('/api/tianqiapi', (req, res, next) => {
+  const cityid = req.query.cityid;
+  axios.get(cityApi.getTianqiapiURL(cityid)).then(r => {
+    res.send(r.data);
     next();
   }).catch(e => console.error(e));
 });

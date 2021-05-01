@@ -2,4 +2,4 @@
 
 Course design of Mobile Web.
 
-An app of reporting weather,
+An app of reporting weather.

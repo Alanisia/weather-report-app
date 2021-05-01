@@ -1,0 +1,9 @@
+.hours-list {
+  list-style: none;
+  display: inline;
+  overflow: scroll;
+}
+
+.hour {
+  text-align: center;
+}
