@@ -1,4 +1,4 @@
-import React, { createFactory } from 'react';
+import React from 'react';
 import Axios from 'axios';
 import TemperatureHead from './temperature-head/temperature-head';
 import TemperatureHours from './temperature-hours/temperature-hours';
