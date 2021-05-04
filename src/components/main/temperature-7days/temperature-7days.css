@@ -1,11 +1,12 @@
-.day-list {
+.days-list {
   color: aliceblue;
   list-style: none;
-  /* margin-left: inherit; */
+  margin: 0 10px;
+  padding: 0;
 }
 
-.week {
-  float: left;
+.days-list li {
+  display: block;
 }
 
 .wimg {
@@ -14,6 +15,7 @@
 
 .temp {
   float: right;
+  /* padding-top: 6px; */
 }
 
 .hg {

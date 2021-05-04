@@ -14,10 +14,10 @@ export default class TemperatureHead extends React.Component {
             <span className="highest">{temp.highest}</span>/
             <span className="lowest">{temp.lowest}</span>
           </p>
-          <span className="air-quality">
+          {/* <span className="air-quality">
             空气指数：<span>{temp.air}</span>&nbsp;
             空气质量：<span>{temp.airQuality}</span>
-          </span>
+          </span> */}
         </div>
       </div>
     );

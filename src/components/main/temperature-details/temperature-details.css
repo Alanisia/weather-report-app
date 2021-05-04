@@ -1,0 +1,16 @@
+.details-sun {
+  margin: 0 10px;
+}
+
+.details-list {
+  margin: 0 10px;
+  padding: 0;
+}
+
+.details-list dl {
+  display: block;
+}
+
+.details-value, .details-sunset {
+  float: right;
+}
