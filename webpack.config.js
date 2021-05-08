@@ -43,6 +43,16 @@ module.exports = {
         use: {
           loader: 'html-loader'
         }
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'svg-sprite-loader'
+        },
+        include: [__dirname + '/src/assets/svgs'],
+        options: {
+          symbolId: 'icon-[name]'
+        }
       }
     ]
   }

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "bootstrap-icons": "^1.4.1",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -27,6 +28,7 @@
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.5.1",
     "style-loader": "^2.0.0",
+    "svg-sprite-loader": "^6.0.6",
     "webpack": "^5.35.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"

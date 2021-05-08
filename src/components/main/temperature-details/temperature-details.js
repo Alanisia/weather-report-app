@@ -5,7 +5,7 @@ export default class TemperatureDetails extends React.Component {
   render() {
     let details = this.props.weatherDetails;
     return (
-      <div>
+      <div className='details'>
         <p className="details-sun">
           <span>日出： {details.sunrise}</span>
           <span className="details-sunset">日落： {details.sunset}</span>

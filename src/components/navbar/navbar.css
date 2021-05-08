@@ -1,0 +1,17 @@
+.navbar {
+  z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+}
+
+.navbar svg {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-configuration {
+  padding-right: 16px;
+  float: right;
+}
