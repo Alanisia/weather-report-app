@@ -14,6 +14,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',
+      favicon: './src/assets/favicon.png',
       chunks: ['index']
     })
   ],
@@ -24,6 +25,16 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'svg-sprite-loader',
+          options: {
+            symbolId: '[name]'
+          }
+        },
+        include: [__dirname + '/src/assets/svgs'],
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -44,16 +55,6 @@ module.exports = {
           loader: 'html-loader'
         }
       },
-      {
-        test: /\.svg$/,
-        use: {
-          loader: 'svg-sprite-loader'
-        },
-        include: [__dirname + '/src/assets/svgs'],
-        options: {
-          symbolId: 'icon-[name]'
-        }
-      }
     ]
   }
 };

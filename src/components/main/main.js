@@ -4,6 +4,7 @@ import TemperatureHead from './temperature-head/temperature-head';
 import TemperatureHours from './temperature-hours/temperature-hours';
 import Temperature7Days from './temperature-7days/temperature-7days';
 import TemperatureDetails from './temperature-details/temperature-details';
+// import * as DB from '../city/city-db';
 import * as FakeDatas from '../../test/fakedatas';
 
 export default class Main extends React.Component {
@@ -18,6 +19,7 @@ export default class Main extends React.Component {
   // componentDidMount() {
   //   const _this = this;
   //   const cityId = 101280101; // DEBUG & TEST
+  
   //   let requestURL = `http://127.0.0.1:9202/api/tianqiapi?cityid=${cityId}`;
   //   Axios.get(requestURL).then(res => {
   //     const weatherInfo = res;
