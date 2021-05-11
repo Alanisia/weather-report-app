@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from './App';
-import './App.css';
-
-// let requireAll = requireContext => requireContext.keys().map(requireContext);
-// let svgs = require.context('./assets/svgs/', false, /\.svg$/);
-// requireAll(svgs);
+import App from './components/App';
+import './components/App.css';
 
 ReactDom.render(<App />, document.getElementById("root"));

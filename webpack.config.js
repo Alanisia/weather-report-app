@@ -1,5 +1,7 @@
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -7,16 +9,20 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: 'js/[name].js'
+    filename: '[name].js'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'index.css'
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
       filename: 'index.html',
       favicon: './src/assets/favicon.png',
       chunks: ['index']
-    })
+    }),
+    new UglifyJSPlugin()
   ],
   devServer: {
     hot: true,
@@ -25,16 +31,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.svg$/,
-        use: {
-          loader: 'svg-sprite-loader',
-          options: {
-            symbolId: '[name]'
-          }
-        },
-        include: [__dirname + '/src/assets/svgs'],
-      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -45,7 +41,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader' },
+          // { loader: 'style-loader' },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader' },
         ]
       },

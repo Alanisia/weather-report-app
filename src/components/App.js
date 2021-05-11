@@ -1,8 +1,8 @@
 import React from 'react';
-import Main from './components/main/main';
-import CitySelect from "./components/city/city-select/city-select";
-import CityManage from './components/city/city-manage/city-manage';
-import Navbar from './components/navbar/navbar';
+import Main from './main/main';
+import CitySelect from "./city/city-select/city-select";
+import CityManage from './city/city-manage/city-manage';
+import Navbar from './navbar/navbar';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class App extends React.Component {
