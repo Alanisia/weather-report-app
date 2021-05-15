@@ -8,25 +8,25 @@ import TemperatureDetails from './temperature-details/temperature-details';
 import * as FakeDatas from '../../test/fakedatas';
 
 export default class Main extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     weatherInfo: null,
-  //     isLoaded: false,
-  //     error: null,
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      weatherInfo: null,
+      isLoaded: false,
+      error: null,
+    };
+  }
   // componentDidMount() {
   //   const _this = this;
   //   const cityId = 101280101; // DEBUG & TEST
-  
+    
   //   let requestURL = `http://127.0.0.1:9202/api/tianqiapi?cityid=${cityId}`;
   //   Axios.get(requestURL).then(res => {
   //     const weatherInfo = res;
-  //     _this.setState({
-  //       weatherInfo: weatherInfo,
-  //       isLoaded: true,
-  //     });
+      // _this.setState({
+      //   weatherInfo: weatherInfo,
+      //   isLoaded: true,
+      // });
   //   }).catch(e => {
   //     console.error(e);
   //     _this.setState({

@@ -8,3 +8,17 @@
   height: 30px;
   float: right;
 }
+
+.add-city {
+  width: 100%;
+  height: 30px;
+  border-radius: 5.25%;
+  box-shadow: inset 5 5;
+}
+
+select {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 100%;
+  height: 30px;
+}
