@@ -4,15 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development",
-    "build:proc": "webpack --mode production",
-    "start": "webpack serve --mode development"
+    "build": "./node_modules/webpack/bin/webpack.js --mode production",
+    "build:dev": "./node_modules/webpack/bin/webpack.js --mode development",
+    "build:proc": "./node_modules/webpack/bin/webpack.js --mode production",
+    "start": "./node_modules/webpack/bin/webpack.js serve --mode development"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "bootstrap-icons": "^1.4.1",
-    "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0"

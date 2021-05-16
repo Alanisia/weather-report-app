@@ -9,8 +9,10 @@
   display: block;
 }
 
-.wimg {
+.days-list li .wimg {
   text-align: center;
+  height: 16px;
+  line-height: 16px;
 }
 
 .temp {

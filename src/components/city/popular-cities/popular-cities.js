@@ -1,10 +1,20 @@
 import React from 'react';
 import Data from './popular-cities.json';
+import * as Common from '../city-common';
 import './popular-cities.css';
 
 export default class PopularCities extends React.Component {
   addCity(e) {
-    alert(e.target.innerHTML + "已经添加至城市列表");
+    let city = e.target.innerHTML;
+    let cities = JSON.parse(localStorage.getItem(Common.default.currentListKey));
+    if (cities.length === 0) localStorage.setItem(Common.default.currentKey, city);
+    if (!cities.includes(city)) {
+      cities.push(city);
+      localStorage.setItem(Common.default.currentListKey, JSON.stringify(cities));
+      alert(city + "已添加至城市列表");
+    } else {
+      alert(city + "已存在于城市列表");
+    }
   }
   render() {
     const cities = Data['popular-cities'];

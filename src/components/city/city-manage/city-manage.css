@@ -1,3 +1,24 @@
 .del {
   float: right;
 }
+
+.city-manage-list {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.city-manage-list li {
+  margin: 10px 10px;
+}
+
+.city-manage-list .city {
+  width: 100%;
+}
+
+.city-manage-list .current {
+  background-color: gray;
+}
+
+.city-manage-list .current .city {
+  background-color: gray;
+}

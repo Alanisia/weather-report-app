@@ -2,6 +2,7 @@ import React from 'react';
 import PopularCities from '../popular-cities/popular-cities';
 import Data from '../city-code.json';
 import './city-select.css';
+import * as Common from '../city-common';
 
 export default class CitySelect extends React.Component {
   constructor(props) {
@@ -20,23 +21,30 @@ export default class CitySelect extends React.Component {
     let addCity = e => {
       let county = this.state.county;
       console.log(county);
-      // let cities = localStorage.getItem("current-city");
-      // if (!cities.includes(county)) {
-      //   cities.push(county);
-      //   localStorage.setItem("current-city", cities);
-      //   alert(`${county}已添加至城市列表`);
-      // } else {
-      //   alert(`${county}已存在于城市列表`);
-      // }
+      if (county !== null) {
+        let cities = JSON.parse(localStorage.getItem(Common.default.currentListKey));
+        if (!cities.includes(county)) {
+          cities.push(county);
+          localStorage.setItem(Common.default.currentListKey, JSON.stringify(cities));
+          alert(`${county}已添加至城市列表`);
+        } else {
+          alert(`${county}已存在于城市列表`);
+        }
+      }
     };
     let selectProvince = e => {
       e.preventDefault();
-      this.setState({ province: e.target.value, countyValues: null, county: null }, () => {
+      this.setState({ province: e.target.value }, () => {
         console.log(this.state.province);
         for (let p of this.state.provinceValues) {
           if (p['@name'] === this.state.province) {
             this.setState({ cityValues: p.city }, () => {
               console.log(this.state.cityValues);
+              // PRE-TEST
+              this.setState({
+                countyValues: p.city[0].county, 
+                county: p.city[0].county[0]['@name']
+              })
             });
             break;
           }
@@ -52,6 +60,7 @@ export default class CitySelect extends React.Component {
             if (p['@name'] === this.state.city) {
               this.setState({ countyValues: p.county }, () => {
                 console.log(this.state.countyValues);
+                this.setState({ county: this.state.countyValues[0]['@name']}, () => {});
               });
               break;
             }
