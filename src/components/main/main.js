@@ -17,14 +17,13 @@ export default class Main extends React.Component {
   componentDidMount() {
     const _this = this;
     let city = localStorage.getItem(Common.default.currentKey);
-    if (city === null || city === '') return;
+    if (city === 'null' || city === 'undefined' || city === null || city === undefined) return;
     let cityId = Common.default.getApiID(city);
     let requestURL = `http://42.194.221.68:9202/api/tianqiapi?cityid=${cityId}`;
     fetch(requestURL).then(res => {
       return res.json();
     }).then(data => {
       const weatherInfo = data; 
-      console.log(weatherInfo);
       _this.setState({
         weatherInfo: weatherInfo,
         isLoaded: true,

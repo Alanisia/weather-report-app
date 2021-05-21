@@ -12,9 +12,11 @@ export default class Temperature7Days extends React.Component {
             <li key={i}>
               <span className="week">{v.week}</span>
               <span className="wimg">
-              {Icon.default.getWeekWeather(v.wea).map(v => {
-                return v;
-              })}
+                <span>
+                  {Icon.default.getWeekWeather(v.wea).map(v => {
+                    return v;
+                  })}
+                </span>
               </span>
               <span className="temp">
                 <span className="hg">{v.highest}</span>&nbsp;

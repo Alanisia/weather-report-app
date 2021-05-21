@@ -14,9 +14,23 @@ export default class CityManage extends React.Component {
   }
   render() {
     let deleteCity = e => {
-      let temp = this.state.cityList;
-      console.log(e);
-      // this.setState()
+      let temp = this.state.cityList, tempc = this.state.current;
+      let city = e.target.parentNode.parentNode.attributes['cityval'].nodeValue;
+      console.log(city);
+      let newList = [], newCurrent = this.state.current;
+      for (let c of temp) {
+        if (city !== c) newList.push(c);
+      }
+      if (!newList.includes(newCurrent)) {
+        newCurrent = newList.length > 0 ? newList[0] : null;
+      }
+      console.log(newList, newCurrent);
+      localStorage.setItem(Common.default.currentKey, newCurrent);
+      localStorage.setItem(Common.default.currentListKey, JSON.stringify(newList));
+      this.setState({ cityList: newList, current: newCurrent }, () => {
+        if (this.state.current !== tempc) this.forceUpdate();
+        else this.render();
+      });
     };
     let changeCurrent = e => {
       localStorage.setItem(Common.default.currentKey, e.target.innerHTML);
@@ -31,7 +45,7 @@ export default class CityManage extends React.Component {
           {this.state.cityList && this.state.cityList.map((v, i) => {
             return (<li key={i} className={v === this.state.current ? 'current' : ''}>
               <span className="city" onClick={e => changeCurrent(e)}>{v}</span>
-              <span className="del" onClick={e => deleteCity(e)}><svg.SvgIcon svg={svg.svgs.x}/></span>
+              <span className="del" cityval={v} onClick={e => deleteCity(e)}><svg.SvgIcon svg={svg.svgs.x}/></span>
             </li>)
           })}
         </ul>

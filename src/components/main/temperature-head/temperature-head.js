@@ -8,7 +8,7 @@ export default class TemperatureHead extends React.Component {
       <div>
         <div className="tempdiv">
           <h4>{temp.city}</h4>
-          <h2 className="temperature">{temp.temperature}</h2>
+          <h1 className="temperature">{temp.temperature}</h1>
           <p className="weather"><strong>{temp.weather}</strong></p>
           <p className="weathers">
             <span className="highest">{temp.highest}</span>/
