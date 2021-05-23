@@ -20,10 +20,8 @@ export default {
     {name: "冰雹", icon: <svgs.SvgIcon svg={svgs.svgs.cloudHail}/>},
   ],
   getWeather: function(name, isNight) {
-    console.log(name, isNight);
     for (let w of this._weather) {
       if (w.name === name) {
-        console.log(w.night);
         if (w.night !== undefined) {
           if (w.night === isNight) 
             return w.icon;
@@ -34,11 +32,9 @@ export default {
   },
   isNight: function(time) {
     let hour = parseInt(time.substring(0, 2));
-    console.log("hour", hour);
     return !(hour >= 6 && hour <= 18);
   },
   getWeekWeather: function(name) {
-    console.log(name);
     let result = [];
     let weas = name.split('转');
     for (let w of weas) {
