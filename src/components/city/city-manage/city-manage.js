@@ -16,7 +16,6 @@ export default class CityManage extends React.Component {
     let deleteCity = e => {
       let temp = this.state.cityList, tempc = this.state.current;
       let city = e.target.parentNode.parentNode.attributes['cityval'].nodeValue;
-      console.log(city);
       let newList = [], newCurrent = this.state.current;
       for (let c of temp) {
         if (city !== c) newList.push(c);
@@ -24,7 +23,6 @@ export default class CityManage extends React.Component {
       if (!newList.includes(newCurrent)) {
         newCurrent = newList.length > 0 ? newList[0] : null;
       }
-      console.log(newList, newCurrent);
       localStorage.setItem(Common.default.currentKey, newCurrent);
       localStorage.setItem(Common.default.currentListKey, JSON.stringify(newList));
       this.setState({ cityList: newList, current: newCurrent }, () => {
@@ -35,7 +33,6 @@ export default class CityManage extends React.Component {
     let changeCurrent = e => {
       localStorage.setItem(Common.default.currentKey, e.target.innerHTML);
       this.setState({ current: localStorage.getItem(Common.default.currentKey) }, () => {
-        console.log(this.state.current);
       });
     }
     return (

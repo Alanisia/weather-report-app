@@ -45,7 +45,6 @@ npm run build
 │   └── index.js.LICENSE.txt
 ├── index.html                  
 ├── package.json                -- 项目信息、依赖描述文件
-├── README.en.md
 ├── README.md
 ├── server                      -- 用于请求时处理跨域的中间件
 │   ├── city-api-util.js

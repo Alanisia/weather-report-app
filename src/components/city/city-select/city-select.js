@@ -20,7 +20,6 @@ export default class CitySelect extends React.Component {
     const provinces = Data.China.province;
     let addCity = e => {
       let county = this.state.county;
-      console.log(county);
       if (county !== null) {
         let cities = JSON.parse(localStorage.getItem(Common.default.currentListKey));
         if (!cities.includes(county)) {
@@ -35,16 +34,13 @@ export default class CitySelect extends React.Component {
     let selectProvince = e => {
       e.preventDefault();
       this.setState({ province: e.target.value }, () => {
-        console.log(this.state.province);
         for (let p of this.state.provinceValues) {
           if (p['@name'] === this.state.province) {
             this.setState({ cityValues: p.city }, () => {
-              console.log(this.state.cityValues);
-              // PRE-TEST
               this.setState({
                 countyValues: p.city[0].county, 
                 county: p.city[0].county[0]['@name']
-              })
+              });
             });
             break;
           }
@@ -55,11 +51,9 @@ export default class CitySelect extends React.Component {
       e.preventDefault();
       if (this.state.province !== null) {
         this.setState({ city: e.target.value }, () => {
-          console.log(this.state.city);
           for (let p of this.state.cityValues) {
             if (p['@name'] === this.state.city) {
               this.setState({ countyValues: p.county }, () => {
-                console.log(this.state.countyValues);
                 this.setState({ county: this.state.countyValues[0]['@name']}, () => {});
               });
               break;
@@ -72,7 +66,6 @@ export default class CitySelect extends React.Component {
       e.preventDefault();
       if (this.state.province !== null && this.state.city !== null) {
         this.setState({ county: e.target.value }, () => {
-          console.log(this.state.county);
         });
       }
     };
